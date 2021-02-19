@@ -1,0 +1,12 @@
+name: "Mangrove"
+description: "A dark and high contrast hugo theme inspired by mangrove snakes 🐍"
+homepage: "https://github.com/sauce-consultants/mangrove"
+tags: ["minimal", "dark", "high contrast", "yellow"]
+features: []
+min_version: "0.41.0"
+licenselink: "https://github.com/sauce-consultants/mangrove/blob/master/LICENSE"
+license: "MIT"
+
+author:
+  name: "Sauce Consultants Limited"
+  homepage: "https://wearesauce.io/"
