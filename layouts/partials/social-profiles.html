@@ -1,0 +1,5 @@
+{{ range .Site.Params.socialProfiles }}
+  <a href="{{ .url }}" target="_blank">
+    <i class="fab fa-fw fa-{{ .platform }}"></i>
+  </a>
+{{ end }}
