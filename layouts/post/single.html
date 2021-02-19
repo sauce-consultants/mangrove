@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+  <div class="inset border-b">
+    {{- partial "post/pager.html" . -}}
+  </div>
+
+  <div class="flex">
+    <div class="flex-1 inset border-r">
+      <h1>{{ .Title }}</h1>
+      <small>{{ .Date }}</small>
+      <div>{{ .Content }}</div>
+    </div>
+    <div>
+      <p>Add some info here</p>
+    </div>
+  </div>
+
+{{ end }}

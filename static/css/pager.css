@@ -1,0 +1,10 @@
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pager-label { font-size: 0.8em; text-transform: uppercase; }
+
+.pager-link-prev { margin-right: auto; text-align: left; }
+.pager-link-next { margin-left: auto; text-align: right; }

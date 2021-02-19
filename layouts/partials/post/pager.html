@@ -1,0 +1,17 @@
+<nav class="pager">
+
+  {{ if .Prev }}
+    <div class="pager-link-prev">
+      <div class="pager-label"><i class="fas fa-fw fa-chevron-left"></i> Previous</div>
+      <a href="{{ .Prev.Permalink }}">{{ .Prev.Title }}</a>
+    </div>
+  {{ end }}
+
+  {{ if .Next }}
+    <div class="pager-link-next">
+      <div class="pager-label">Next <i class="fas fa-fw fa-chevron-right"></i></div>
+      <a href="{{ .Next.Permalink }}">{{ .Next.Title }}</a>
+    </div>
+  {{ end }}
+
+</nav>
