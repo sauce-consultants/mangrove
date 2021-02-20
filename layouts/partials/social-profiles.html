@@ -1,5 +1,7 @@
-{{ range .Site.Params.socialProfiles }}
-  <a href="{{ .url }}" target="_blank">
-    <i class="fab fa-fw fa-{{ .platform }}"></i>
-  </a>
-{{ end }}
+<div class="flex">
+  {{ range .Site.Params.socialProfiles }}
+    <a href="{{ .url }}" target="_blank" class="">
+      <i class="fab fa-fw fa-{{ .platform }}"></i>
+    </a>
+  {{ end }}
+</div>
