@@ -9,17 +9,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   </head>
   <body class="flex h-screen">
-    <div class="flex flex-column items-center inset border-r">
-      <a href="{{ .Site.BaseURL | absURL }}">
-        {{ if .Site.Params.logo }}
-          <img src="{{ .Site.Params.logo | absURL }}" title="{{ .Site.Title }}" height="96" />
-        {{ else }}
-          <span>{{ .Site.Title }}</span>
-        {{ end }}
-      </a>
-      <div class="mt-auto">{{- partial "social-profiles.html" . -}}</div>
-      <small>{{ .Site.Copyright }}</small>
-    </div>
+    {{- partial "nav.html" . -}}
     <div class="flex-1">
       {{- block "main" . }}{{- end }}
     </div>
