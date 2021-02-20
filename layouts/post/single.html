@@ -1,18 +1,28 @@
 {{ define "main" }}
 
-  <div class="inset border-b">
-    {{- partial "post/pager.html" . -}}
-  </div>
+  <div class="flex flex-column h-full">
 
-  <div class="flex">
-    <div class="flex-1 inset border-r">
-      <h1>{{ .Title }}</h1>
-      <small>{{ .Date }}</small>
-      <div>{{ .Content }}</div>
+    <div class="inset border-b">
+      {{- partial "post/pager.html" . -}}
     </div>
-    <div>
-      <p>Add some info here</p>
+
+    <div class="flex flex-1 clipped">
+      <div class="flex-1 inset border-r scrollable">
+        <h1>{{ .Title }}</h1>
+        <small>{{ .Date }}</small>
+        <div>{{ .Content }}</div>
+      </div>
+      <div class="flex-1 inset scrollable">
+        <p>Things to add here</p>
+        <ul>
+          <li>Author info</li>
+          <li>Tags</li>
+          <li>Additional links</li>
+          <li>Retweet</li>
+        </ul>
+      </div>
     </div>
+
   </div>
 
 {{ end }}

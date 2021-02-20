@@ -18,10 +18,10 @@
         {{ end }}
       </a>
       {{- partial "social-profiles.html" . -}}
+      <small>{{ .Site.Copyright }}</small>
     </div>
     <div class="flex-1">
       {{- block "main" . }}{{- end }}
-      <small>{{ .Site.Copyright }}</small>
     </div>
   </body>
 </html>
