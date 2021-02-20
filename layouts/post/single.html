@@ -12,12 +12,21 @@
         <small>{{ .Date }}</small>
         <div>{{ .Content }}</div>
       </div>
-      <div class="flex-1 inset scrollable">
+      <div class="flex-1 scrollable" style="font-size:0.9em">
+
+        <div class="inset border-b">
+          <div><i class="fas fa-fw fa-book-open"></i> Additional reading</div>
+          {{ range .Params.links }}
+            <div>
+              <a href="{{ . }}" target="_blank">{{ . }} <i class="fas fa-fw fa-external-link-alt"></i></a>
+            </div>
+          {{ end }}
+        </div>
+
         <p>Things to add here</p>
         <ul>
           <li>Author info</li>
           <li>Tags</li>
-          <li>Additional links</li>
           <li>Retweet</li>
         </ul>
       </div>
