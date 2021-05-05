@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   color: #fff;
   overscroll-behavior-y: none;
 }
@@ -19,29 +19,57 @@ a {
   text-decoration: none;
 }
 
-.h-full { height: 100%; }
-.h-screen { height: 100vh; }
+.h-full {
+  height: 100%;
+}
+.h-screen {
+  height: 100vh;
+}
 
-.flex { display: flex; }
-.flex-column { flex-direction: column; }
-.flex-1 { flex: 1; }
-.items-center { align-items: center; }
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-1 {
+  flex: 1;
+}
+.items-center {
+  align-items: center;
+}
 
-.clipped { overflow: hidden; }
-.scrollable { overflow-y: auto; }
+.clipped {
+  overflow: hidden;
+}
+.scrollable {
+  overflow-y: auto;
+}
 
-.inset { padding: 16px; }
+.inset {
+  padding: 16px;
+}
 
-.mt-auto { margin-top: auto; }
-.mr-auto { margin-right: auto; }
-.ml-auto { margin-left: auto; }
+.mt-auto {
+  margin-top: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
 
 .border-b,
 .border-r {
   border-width: 0;
   border-style: solid;
-  border-color: #1a1a1a;
+  border-color: #353535;
 }
 
-.border-b { border-bottom-width: 1px; }
-.border-r { border-right-width: 1px; }
+.border-b {
+  border-bottom-width: 1px;
+}
+.border-r {
+  border-right-width: 1px;
+}
