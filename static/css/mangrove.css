@@ -1,3 +1,8 @@
+:root {
+  --yellow: #fedb00;
+  --black: #000;
+}
+
 *,
 *:before,
 *:after {
@@ -10,12 +15,13 @@ body {
   padding: 0;
   background-color: #000;
   font-family: "Montserrat";
+  line-height: 150%;
   color: #fff;
   overscroll-behavior-y: none;
 }
 
 a {
-  color: #fedb00;
+  color: var(--yellow);
   text-decoration: none;
 }
 
@@ -24,6 +30,10 @@ a {
 }
 .h-screen {
   height: 100vh;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -46,8 +56,18 @@ a {
   overflow-y: auto;
 }
 
-.inset {
-  padding: 16px;
+.inset-y {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.inset-x {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.m-none {
+  margin: 0;
 }
 
 .mt-auto {
@@ -58,6 +78,32 @@ a {
 }
 .ml-auto {
   margin-left: auto;
+}
+
+.ml-lg {
+  margin-left: 16px;
+}
+
+.mb-sm {
+  margin-bottom: 8px;
+}
+
+.mb-lg {
+  margin-bottom: 16px;
+}
+
+.px-sm {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.py-xs {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.bg-primary {
+  background-color: var(--yellow);
 }
 
 .border-b,
@@ -72,4 +118,26 @@ a {
 }
 .border-r {
   border-right-width: 1px;
+}
+
+.rounded-sm {
+  border-radius: 2px;
+}
+
+.rounded-md {
+  border-radius: 6px;
+}
+
+.text-dark {
+  color: var(--black);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+  <div class="flex flex-column h-full">
+
+    <div class="inset-x inset-y border-b">
+      {{- partial "post/pager.html" . -}}
+    </div>
+
+    <div class="flex flex-1 clipped">
+      <div class="flex-1 inset-x inset-y border-r scrollable">
+        <h1>{{ .Title }}</h1>
+        <small>{{ .Date }}</small>
+        <div>{{ .Content }}</div>
+      </div>
+      <div class="scrollable" style="font-size:0.9em;width:480px">
+
+        {{ $path := printf "/%s/%s" "authors" .Params.author }}
+        {{ with $.Site.GetPage $path }}
+          <div class="flex inset-x inset-y border-b">
+          	<img class="rounded-md" src="{{ .Params.avatar }}" width="96" height="96">
+            <div class="ml-lg">
+              <h2 class="m-none">{{ .Params.name }}</h2>
+          	  <p>{{ .Params.bio }}</p>
+            </div>
+          </div>
+        {{ end }}
+
+        {{- if .Params.links -}}
+          <div class="inset-x inset-y border-b">
+            <div class="mb-sm"><i class="fas fa-fw fa-bookmark"></i> Additional reading</div>
+            {{ range .Params.links }}
+              <a class="block ellipsis" href="{{ . }}" target="_blank">{{ . }} <i class="fas fa-fw fa-external-link-alt"></i></a>
+            {{ end }}
+          </div>
+        {{ end }}
+
+        {{- if .Params.tags -}}
+          <div class="inset-x inset-y border-b">
+            <div class="mb-sm"><i class="fas fa-fw fa-tag"></i> Tags</div>
+            {{ range .Params.tags }}
+              {{- partial "tag.html" . -}}
+            {{ end }}
+          </div>
+        {{ end }}
+
+
+        <div class="inset-x inset-y border-b">
+          <div class="mb-sm"><i class="fas fa-fw fa-book-open"></i> Similar Posts</div>
+          <p>@todo, this still needs to be hooked up!</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+{{ end }}

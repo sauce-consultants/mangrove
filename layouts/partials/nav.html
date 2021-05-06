@@ -1,4 +1,4 @@
-<div class="flex flex-column items-center inset border-r">
+<div class="flex flex-column items-center inset-x inset-y border-r">
 
   <a href="{{ .Site.BaseURL | absURL }}">
     {{ if .Site.Params.logo }}
@@ -8,9 +8,11 @@
     {{ end }}
   </a>
 
+  <input type="search" placeholder="Search" />
+
   <nav>
     {{ range .Site.Menus.main }}
-      <div>{{.Pre}} {{ .Name }}</div>
+      <div class="inset-x inset-y">{{.Pre}} {{ .Name }}</div>
     {{ end }}
   </nav>
 
