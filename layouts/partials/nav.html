@@ -2,7 +2,8 @@
 
   <a href="{{ .Site.BaseURL | absURL }}">
     {{ if .Site.Params.logo }}
-      <img src="{{ .Site.Params.logo | absURL }}" title="{{ .Site.Title }}" height="96" />
+      {{ $logo := resources.Get .Site.Params.logo }}
+      <img src="{{ $logo.Permalink }}" title="{{ .Site.Title }}" height="96" />
     {{ else }}
       <span>{{ .Site.Title }}</span>
     {{ end }}
