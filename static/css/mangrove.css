@@ -1,6 +1,7 @@
 :root {
   --yellow: #fedb00;
   --black: #000;
+  --gray: #353535;
 }
 
 *,
@@ -25,6 +26,9 @@ a {
   text-decoration: none;
 }
 
+.w-full {
+  width: 100%;
+}
 .h-full {
   height: 100%;
 }
@@ -34,6 +38,10 @@ a {
 
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -47,6 +55,9 @@ a {
 }
 .items-center {
   align-items: center;
+}
+.space-between {
+  justify-content: space-between;
 }
 
 .clipped {
@@ -64,6 +75,16 @@ a {
 .inset-x {
   padding-left: 16px;
   padding-right: 16px;
+}
+
+.inset-y2 {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.inset-x2 {
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .m-none {
@@ -84,12 +105,36 @@ a {
   margin-left: 16px;
 }
 
+.mr-sm {
+  margin-right: 8px;
+}
+
+.mr-md {
+  margin-right: 10px;
+}
+
+.mr-lg {
+  margin-right: 16px;
+}
+
 .mb-sm {
   margin-bottom: 8px;
 }
 
+.mb-md {
+  margin-bottom: 10px;
+}
+
 .mb-lg {
   margin-bottom: 16px;
+}
+
+.mb-xl {
+  margin-bottom: 48px;
+}
+
+.ml-sm {
+  padding-left: 8px;
 }
 
 .px-sm {
@@ -107,6 +152,7 @@ a {
 }
 
 .border-b,
+.border-t,
 .border-r {
   border-width: 0;
   border-style: solid;
@@ -115,6 +161,9 @@ a {
 
 .border-b {
   border-bottom-width: 1px;
+}
+.border-t {
+  border-top-width: 1px;
 }
 .border-r {
   border-right-width: 1px;
@@ -126,6 +175,10 @@ a {
 
 .rounded-md {
   border-radius: 6px;
+}
+
+.rounded-full {
+  border-radius: 50%;
 }
 
 .text-dark {
@@ -140,4 +193,31 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.lh-1 {
+  line-height: 1;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.text-gray {
+  color: #666;
+}
+
+.twitter-btn {
+  padding: 6px 12px;
+  border-radius: 5px;
+  background-color: #1b95e0;
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
 }

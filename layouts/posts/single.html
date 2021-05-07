@@ -1,22 +1,20 @@
 {{ define "main" }}
 
-  <div class="flex flex-column h-full">
+  <div class="flex flex-column flex-1 h-screen">
 
-    <div class="inset-x inset-y border-b">
+    <div class="inset-x2 inset-y border-b">
       {{- partial "post/pager.html" . -}}
     </div>
 
     <div class="flex flex-1 clipped">
-      <div class="flex-1 inset-x inset-y border-r scrollable">
-        <h1>{{ .Title }}</h1>
-        <small>{{ .Date }}</small>
+      <div class="flex-1 inset-x2 inset-y2 border-r scrollable">
+        <h1 class="m-none">{{ .Title }}</h1>
         <div>{{ .Content }}</div>
       </div>
       <div class="scrollable" style="font-size:0.9em;width:480px">
 
-        {{ $path := printf "/%s/%s" "authors" .Params.author }}
-        {{ with $.Site.GetPage $path }}
-          <div class="flex inset-x inset-y border-b">
+        {{ with $.Site.GetPage (printf "/%s/%s" "authors" .Params.author) }}
+          <div class="flex inset-x inset-y2 border-b">
           	<img class="rounded-md" src="{{ .Params.avatar }}" width="96" height="96">
             <div class="ml-lg">
               <h2 class="m-none">{{ .Params.name }}</h2>
@@ -35,19 +33,15 @@
         {{ end }}
 
         {{- if .Params.tags -}}
-          <div class="inset-x inset-y border-b">
+          <div class="inset-x inset-y">
             <div class="mb-sm"><i class="fas fa-fw fa-tag"></i> Tags</div>
             {{ range .Params.tags }}
-              {{- partial "tag.html" . -}}
+              {{ with $.Site.GetPage "tags" . }}
+                {{ partial "tag.html" . }}
+              {{ end }}
             {{ end }}
           </div>
         {{ end }}
-
-
-        <div class="inset-x inset-y border-b">
-          <div class="mb-sm"><i class="fas fa-fw fa-book-open"></i> Similar Posts</div>
-          <p>@todo, this still needs to be hooked up!</p>
-        </div>
 
       </div>
     </div>
