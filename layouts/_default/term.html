@@ -1,8 +1,10 @@
 {{ define "main" }}
-  {{- partial "page-title" . -}}
-  <div class="flex-1 scrollable">
-    {{ range where .Pages "Section" "posts" }}
-      {{ partial "post.html" . }}
-    {{ end }}
+  <div class="flex flex-column h-full">
+    {{- partial "page-title" . -}}
+    <div class="flex-1 scrollable">
+      {{ range where .Pages "Section" "posts" }}
+        {{ partial "post.html" . }}
+      {{ end }}
+    </div>
   </div>
 {{ end }}

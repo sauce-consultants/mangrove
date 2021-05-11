@@ -5,8 +5,10 @@
       <img src="{{ $logo.Permalink }}" title="{{ .Site.Title }}" class="nav-logo" />
     </a>
   {{ end }}
-  <nav class="hidden md:visible w-full flex-1 inset-x2 inset-y2">
-    <div class="mb-xl">
+  <nav class="flex flex-column">
+    <a href="{{ "categories" | absURL }}" class="md:hidden mb-xl"><i class="text-lg fas fa-fw fa-folder"></i></a>
+    <a href="{{ "tags" | absURL }}" class="md:hidden"><i class="text-lg fas fa-fw fa-tags"></i></a>
+    <div class="mb-xl hidden md:visible">
       <div class="bold text-sm upper"><i class="mr-sm text-md fas fa-fw fa-folder"></i> Browse Categories</div>
       {{ range .Site.Taxonomies.categories }}
         <div class="flex items-center mt-md">
@@ -15,7 +17,7 @@
         </div>
       {{ end }}
     </div>
-    <div class="mb-xl">
+    <div class="mb-xl hidden md:visible">
       <div class="bold text-sm upper mb-md"><i class="mr-sm text-md fas fa-fw fa-tags"></i> Browse Tags</div>
       {{ range .Site.Taxonomies.tags }}
         {{ partial "tag.html" .Page }}
@@ -23,9 +25,9 @@
     </div>
   </nav>
   <div class="mt-auto text-center">
-    <div class="flex flex-column md:flex-row justify-center mb-sm">
+    <div class="flex flex-column md:flex-row justify-center mb-sm text-lg">
       {{ range .Site.Params.socialProfiles }}
-        <a href="{{ .url }}" target="_blank" class="sm:mt-sm">
+        <a href="{{ .url }}" target="_blank" class="sm:mt-md">
           <i class="fab fa-fw fa-{{ .platform }}"></i>
         </a>
       {{ end }}

@@ -1,14 +1,12 @@
-<article class="flex inset-x-lg inset-y-xl">
+<article class="flex inset-x-lg inset-y-lg border-b">
   {{ with $.Site.GetPage "authors" .Params.author }}
-    <img class="rounded-sm" src="{{ .Params.avatar }}" width="72" height="72" />
+    <img class="rounded-sm mr-lg" src="{{ .Params.avatar }}" width="72" height="72" />
   {{ end }}
   <div class="ml-lg">
-    <h1 class="m-none" class="mb-sm">
-      <a href="{{ .Permalink }}" class="light text-white">{{ .Title }}</a>
-    </h1>
-    <div style="max-width:700px;color:#aaa;">{{ .Summary }}</div>
+    <a href="{{ .Permalink }}" class="block m-none mb-sm text-lg light">{{ .Title }}</a>
+    <div class="text-md">{{ .Summary }}</div>
     {{ if .Truncated }}
-      <a href="{{ .RelPermalink }}">Read More…</a>
+      <a class="mt-sm text-sm" href="{{ .RelPermalink }}">Read More…</a>
     {{ end }}
   </div>
 </article>

@@ -1,9 +1,9 @@
 {{ define "main" }}
   <div class="flex flex-column h-full clipped">
     {{- partial "page-title" . -}}
-    <div class="flex-1 scrollable">
-      {{ range where .Site.RegularPages "Section" "posts" }}
-        {{ partial "post.html" . }}
+    <div class="flex-1 scrollable inset-x-lg inset-y-lg">
+      {{ range .Site.Taxonomies.tags }}
+        {{ partial "tag.html" .Page }}
       {{ end }}
     </div>
   </div>

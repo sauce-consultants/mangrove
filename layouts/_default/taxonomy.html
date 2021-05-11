@@ -1,8 +1,0 @@
-{{ define "main" }}
-  {{- partial "page-title" . -}}
-  <div class="flex-1 scrollable">
-    {{ range .Pages }}
-      <p>{{ .Title }}</p>
-    {{ end }}
-  </div>
-{{ end }}

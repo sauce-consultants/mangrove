@@ -3,10 +3,12 @@
 
 /* Base */
 :root {
+  --font: "Montserrat";
   --black: #000;
   --white: #fff;
   --yellow: #fedb00;
   --gray: #353535;
+  --body-color: var(--white);
   --gap-xs: 5px;
   --gap-sm: 8px;
   --gap-md: 13px;
@@ -33,10 +35,12 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat";
+  font-family: var(--font);
   font-size: 16px;
-  color: #fff;
+  line-height: 24px;
+  color: var(--body-color);
   overscroll-behavior-y: none;
+  overflow: hidden;
 }
 
 a {
@@ -74,6 +78,7 @@ a:hover {
 /* Background color */
 .bg-black { background-color: var(--black); }
 .bg-yellow { background-color: var(--yellow); }
+.bg-gray { background-color: var(--gray); }
 
 /* Rounded Corners */
 .rounded-sm { border-radius: var(--corner-sm); }
@@ -117,6 +122,7 @@ a:hover {
 .mt-auto { margin-top: auto; }
 .ml-auto { margin-left: auto; }
 
+.mt-sm { margin-top: var(--gap-sm); }
 .mb-sm { margin-bottom: var(--gap-sm); }
 .ml-sm { margin-left: var(--gap-sm); }
 .mr-sm { margin-right: var(--gap-sm); }
@@ -125,32 +131,16 @@ a:hover {
 .mr-lg { margin-right: var(--gap-lg); }
 .mb-xl { margin-bottom: var(--gap-xl); }
 
-/*.mr-auto { margin-right: auto; }
-.ml-auto { margin-left: auto; }
-.mx-sm { margin-left: var(--gap-sm); margin-right: var(--gap-sm); }
-.mb-sm { margin-bottom: var(--gap-sm); }
-.ml-lg { margin-left: 16px; }
-.mr-sm { margin-right: 8px; }
-.mr-md { margin-right: 10px; }
-.mr-lg { margin-right: 16px; }
-.mb-md { margin-bottom: 10px; }
-.mb-lg { margin-bottom: 16px; }
-
-.ml-sm { padding-left: 8px; }*/
-
 /* Border */
-.border-b, .border-t, .border-r, .border-l {
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--gray);
-}
+.border-b, .border-t, .border-r, .border-l { border-width: 0; border-style: solid; border-color: var(--gray); }
 .border-b { border-bottom-width: 1px; }
 .border-t { border-top-width: 1px; }
 .border-r { border-right-width: 1px; }
 .border-l { border-left-width: 1px; }
 
-/* Typography */
-.article { font-size: 1.125em; line-height: 1.5em; }
+/* Article Typography */
+.article { font-size: 1.14em; }
+.article * { line-height: 1.6em; }
 
 /* Code snippet highlighting */
 .chroma { overflow-x: auto; padding: var(--gap-md); border-radius: var(--corner-lg); }
@@ -159,11 +149,13 @@ a:hover {
 @media screen and (max-width: 1024px) {
   .sm\:mt-sm { margin-top: var(--gap-sm); }
   .sm\:scrollable { overflow: auto; }
+  .sm\:mt-md { margin-top: var(--gap-md); }
 }
 
 @media screen and (min-width: 1024px) {
   .md\:flex-row { flex-direction: row; }
   .md\:visible { display: block; }
+  .md\:hidden { display: none; }
   .md\:scrollable { overflow: auto; }
   .md\:inset-x-xl { padding-left: var(--gap-xl); padding-right: var(--gap-xl); }
   .md\:inset-y-xl { padding-top: var(--gap-xl); padding-bottom: var(--gap-xl); }

@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <div class="flex flex-column h-full clipped">
+    {{- partial "page-title" . -}}
+    <div class="flex-1 scrollable inset-x-lg inset-y-lg">
+      {{ range .Site.Taxonomies.categories }}
+        <div class="flex items-center mt-md">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+          <span class="ml-auto">{{ .Pages | len }}</span>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
