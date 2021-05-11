@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-black">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Title }}</title>
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;800&display=swap">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ "css/mangrove.css" | absURL }}" />
-    <link rel="stylesheet" type="text/css" href="{{ "css/pager.css" | absURL }}" />
+    <link rel="stylesheet" type="text/css" href="{{ "css/layouts.css" | absURL }}" />
+    <link rel="stylesheet" type="text/css" href="{{ "css/syntax.css" | absURL }}" />
   </head>
-  <body class="flex">
-    {{ partial "nav.html" . }}
-    <div class="flex-1">{{- block "main" . }}{{- end }}</div>
+  <body class="layout flex w-screen h-screen">
+    <div class="layout-nav">{{ partial "main-nav.html" . }}</div>
+    <div class="layout-main flex-1">{{- block "main" . }}{{- end }}</div>
   </body>
 </html>

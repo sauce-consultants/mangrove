@@ -1,0 +1,35 @@
+<div class="nav flex flex-column items-center h-screen inset-y-lg md:inset-x-xl md:inset-y-xl border-r scrollable">
+  {{ if .Site.Params.logo }}
+    {{ $logo := resources.Get .Site.Params.logo }}
+    <a href="{{ .Site.BaseURL | absURL }}" class="block mb-xl">
+      <img src="{{ $logo.Permalink }}" title="{{ .Site.Title }}" class="nav-logo" />
+    </a>
+  {{ end }}
+  <nav class="hidden md:visible w-full flex-1 inset-x2 inset-y2">
+    <div class="mb-xl">
+      <div class="bold text-sm upper"><i class="mr-sm text-md fas fa-fw fa-folder"></i> Browse Categories</div>
+      {{ range .Site.Taxonomies.categories }}
+        <div class="flex items-center mt-md">
+          <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+          <span class="ml-auto">{{ .Pages | len }}</span>
+        </div>
+      {{ end }}
+    </div>
+    <div class="mb-xl">
+      <div class="bold text-sm upper mb-md"><i class="mr-sm text-md fas fa-fw fa-tags"></i> Browse Tags</div>
+      {{ range .Site.Taxonomies.tags }}
+        {{ partial "tag.html" .Page }}
+      {{ end }}
+    </div>
+  </nav>
+  <div class="mt-auto text-center">
+    <div class="flex flex-column md:flex-row justify-center mb-sm">
+      {{ range .Site.Params.socialProfiles }}
+        <a href="{{ .url }}" target="_blank" class="sm:mt-sm">
+          <i class="fab fa-fw fa-{{ .platform }}"></i>
+        </a>
+      {{ end }}
+    </div>
+    <small class="hidden md:visible">{{ .Site.Copyright }}</small>
+  </div>
+</div>

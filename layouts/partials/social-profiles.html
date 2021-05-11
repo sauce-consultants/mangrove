@@ -1,7 +1,5 @@
-<div class="text-center">
-  {{ range .Site.Params.socialProfiles }}
-    <a href="{{ .url }}" target="_blank" class="ml-sm mr-sm">
-      <i class="fab fa-fw fa-{{ .platform }}"></i>
-    </a>
-  {{ end }}
-</div>
+{{ range .Site.Params.socialProfiles }}
+  <a href="{{ .url }}" target="_blank">
+    <i class="fab fa-fw fa-{{ .platform }}"></i>
+  </a>
+{{ end }}

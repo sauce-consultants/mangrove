@@ -1,39 +1,46 @@
 {{ define "main" }}
-
-  <div class="flex flex-column flex-1 h-screen">
-
-    <div class="inset-x2 inset-y border-b">
-      {{- partial "post/pager.html" . -}}
+  <div class="flex flex-1 flex-column h-full clipped">
+    <div class="inset-x-lg inset-y-md border-b">
+      <nav class="flex justify-between">
+        {{ if .PrevInSection }}
+          <div class="flex-1 text-left">
+            <div class="bold upper text-sm mb-sm"><i class="mr-sm fas fa-chevron-left"></i> Previous</div>
+            <a href="{{ .Prev.Permalink }}">{{ .PrevInSection.Title }}</a>
+          </div>
+        {{ end }}
+        {{ if .NextInSection }}
+          <div class="flex-1 text-right">
+            <div class="bold upper text-sm mb-sm">Next <i class="ml-sm fas fa-chevron-right"></i></div>
+            <a href="{{ .Next.Permalink }}">{{ .NextInSection.Title }}</a>
+          </div>
+        {{ end }}
+      </nav>
     </div>
-
-    <div class="flex flex-1 clipped">
-      <div class="flex-1 inset-x2 inset-y2 border-r scrollable" style="font-size:1.25em;line-height:1.5">
+    <div class="flex flex-column lg:flex-row flex-1 sm:scrollable md:scrollable lg:clipped">
+      <div class="post-layout-content article inset-x-lg inset-y-lg lg:scrollable">
         <h1 class="m-none">{{ .Title }}</h1>
         <div>{{ .Content }}</div>
       </div>
-      <div class="scrollable" style="font-size:0.9em;width:480px">
-
+      <div class="post-layout-info border-t lg:border-t-0 lg:border-l lg:scrollable">
         {{ with $.Site.GetPage (printf "/%s/%s" "authors" .Params.author) }}
-          <div class="flex inset-x inset-y2 border-b">
-          	<img class="rounded-md" src="{{ .Params.avatar }}" width="96" height="96">
-            <div class="ml-lg">
-              <h2 class="m-none">{{ .Params.name }}</h2>
-          	  <p>{{ .Params.bio }}</p>
+          <div class="flex inset-x-lg inset-y-lg border-b">
+            <img class="mr-lg rounded-lg" src="{{ .Params.avatar }}" width="96" height="96">
+            <div>
+              <h2 class="m-none mb-sm text-lg">{{ .Params.name }}</h2>
+              <p class="m-none text-md">{{ .Params.bio }}</p>
             </div>
           </div>
         {{ end }}
-
         {{- if .Params.links -}}
-          <div class="inset-x inset-y border-b">
-            <div class="mb-sm"><i class="fas fa-fw fa-bookmark"></i> Additional reading</div>
+          <div class="inset-x-lg inset-y-lg border-b">
+            <div class="mb-sm"><i class="fas fa-fw fa-external-link-alt"></i> Additional reading</div>
             {{ range .Params.links }}
-              <a class="block ellipsis" href="{{ . }}" target="_blank">{{ . }} <i class="fas fa-fw fa-external-link-alt"></i></a>
+              <a class="block ellipsis" href="{{ . }}" target="_blank">{{ . }}</a>
             {{ end }}
           </div>
         {{ end }}
-
         {{- if .Params.tags -}}
-          <div class="inset-x inset-y">
+          <div class="inset-x-lg inset-y-lg">
             <div class="mb-sm"><i class="fas fa-fw fa-tag"></i> Tags</div>
             {{ range .Params.tags }}
               {{ with $.Site.GetPage "tags" . }}
@@ -42,10 +49,7 @@
             {{ end }}
           </div>
         {{ end }}
-
       </div>
     </div>
-
   </div>
-
 {{ end }}

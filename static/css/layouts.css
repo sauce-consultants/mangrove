@@ -1,0 +1,22 @@
+/* Mobile first */
+.layout-nav { width: var(--nav-width); }
+.nav-logo { width: var(--nav-logo-width); }
+.post-layout-content { max-width: var(--post-content-width); }
+.post-layout-info { width: var(--post-content-width); }
+
+/* Then tablet */
+@media screen and (min-width: 1024px) {
+  :root {
+    --nav-width: 320px;
+    --nav-logo-width: 96px;
+  }
+}
+
+/* And finally desktop and beyond */
+@media screen and (min-width: 1440px) {
+  :root {
+    --post-info-width: 480px;
+    --post-content-width: calc(100vw - var(--nav-width) - var(--post-info-width));
+  }
+  .post-layout-info { width: var(--post-info-width); }
+}
