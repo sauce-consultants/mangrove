@@ -9,6 +9,7 @@
   --yellow: #fedb00;
   --gray: #353535;
   --body-color: var(--white);
+  --font-mono: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   --gap-xs: 5px;
   --gap-sm: 8px;
   --gap-md: 13px;
@@ -141,7 +142,7 @@ a:hover {
 /* Article Typography */
 .article { font-size: 1.14em; }
 .article img { max-width: 100%; }
-.article :not(pre) > code { background-color: dimgrey; border-radius: 3px; padding: 2px 5px; font-family: ui-monospace; font-size: 0.9em; }
+.article :not(pre) > code { background-color: dimgrey; border-radius: 3px; padding: 2px 5px; font-family: var(--font-mono); font-size: 0.9em; }
 .article * { line-height: 1.6em; }
 
 /* Code snippet highlighting */
