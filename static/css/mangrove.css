@@ -140,6 +140,8 @@ a:hover {
 
 /* Article Typography */
 .article { font-size: 1.14em; }
+.article img { max-width: 100%; }
+.article :not(pre) > code { background-color: dimgrey; border-radius: 3px; padding: 2px 5px; font-family: ui-monospace; font-size: 0.9em; }
 .article * { line-height: 1.6em; }
 
 /* Code snippet highlighting */
