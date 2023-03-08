@@ -145,6 +145,20 @@ a:hover {
 .article :not(pre) > code { background-color: dimgrey; border-radius: 3px; padding: 2px 5px; font-family: var(--font-mono); font-size: 0.9em; }
 .article * { line-height: 1.6em; }
 
+/* Article Table */
+.article table {
+  border-collapse: collapse;
+  margin:0;
+  padding:0;
+  width: 100%;
+}
+.article table th, .article table td {
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: .5em;
+  text-align: left;
+  font-size: 0.8em
+}
+
 /* Code snippet highlighting */
 .chroma { overflow-x: auto; padding: var(--gap-md); border-radius: var(--corner-lg); }
 
